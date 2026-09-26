@@ -30,13 +30,11 @@ def solution(id_list, report, k):
         name = line.split(' ')
         # print(kill_count)
         if name[1] not in kill_count[name[0]]:
-            report_nums[name[1]] = report_nums.get(name[1], 0) + 1
             kill_count[name[0]].add(name[1])
+            report_nums[name[1]] += 1
+            # report_nums[name[1]] = report_nums.get(name[1], 0) + 1
+            # kill_count[name[0]].add(name[1])
         
-        
-    
-#     print('report_nums: ', report_nums)
-#     print('kill_count: ', kill_count)
     
     for i, j in kill_count.items():
         cnt = 0;
